@@ -16,7 +16,6 @@ const pageBlocks = [
   { type: 'image', src: "/8.png" },
   { type: 'image', src: "/9.png" },
   { type: 'custom-banner' },
-  { type: 'image', src: "/10.png" },
   { type: 'image', src: "/11.webp" },
   { type: 'form', id: "contact-bottom" },
 ];
@@ -156,6 +155,45 @@ const ReusableContactForm = () => (
   </form>
 );
 
+const FloatingBanner = () => {
+  const scrollToForm = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <div className="fixed right-3 md:right-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3">
+      {/* 퀵 메뉴 보드 */}
+      <div className="bg-white/95 backdrop-blur-sm rounded-[24px] shadow-2xl border border-gray-100 p-2 flex flex-col gap-3">
+        {/* 관심고객 등록 */}
+        <button onClick={() => scrollToForm('contact-mid')} className="flex flex-col items-center justify-center gap-1 group w-14 pt-2">
+          <div className="w-10 h-10 rounded-full bg-[#FB6719]/10 text-[#FB6719] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#FB6719] group-hover:text-white transition-all">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </div>
+          <span className="text-[10px] font-bold text-gray-700 mt-1 whitespace-nowrap">우리집 검색</span>
+        </button>
+
+        <div className="w-8 h-[1px] bg-gray-100 mx-auto"></div>
+
+        {/* 방문 예약 */}
+        <button onClick={() => scrollToForm('contact-bottom')} className="flex flex-col items-center justify-center gap-1 group w-14 pb-2">
+          <div className="w-10 h-10 rounded-full bg-[#FB6719]/10 text-[#FB6719] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#FB6719] group-hover:text-white transition-all">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          </div>
+          <span className="text-[10px] font-bold text-gray-700 mt-1 whitespace-nowrap">상담 문의</span>
+        </button>
+      </div>
+
+      {/* 애니메이션 마우스 스크롤 인디케이터 */}
+      <div className="mt-1 flex flex-col items-center opacity-90 animate-bounce">
+        <div className="w-8 h-12 bg-[#1E2F3F] rounded-[16px] flex justify-center p-1.5 shadow-lg border border-white/20">
+          <div className="w-1.5 h-3 bg-white rounded-full mt-1"></div>
+        </div>
+        <span className="text-[11px] font-bold text-[#1E2F3F] mt-1 drop-shadow-sm">Scroll</span>
+      </div>
+    </div>
+  );
+};
+
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
 
@@ -178,6 +216,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#e8eaed] font-[family-name:var(--font-geist-sans)] flex flex-col items-center w-full">
+      <FloatingBanner />
       <style dangerouslySetInnerHTML={{
         __html: `
         /* 강력한 폼 텍스트 색상 강제 오버라이드 (iOS Safari 등 기기 파편화 방지) */
@@ -293,20 +332,20 @@ export default function Home() {
             // 메인 히어로 섹션 (인터랙션 및 디자인 추가)
             if (block.type === 'hero') {
               return (
-                <div key={`block-${idx}`} className="w-full relative overflow-hidden bg-[#1E2F3F] flex flex-col items-center justify-center min-h-[85vh] md:min-h-screen">
-                  {/* 사진 가득 채우기 & 고급스러운 스케일 애니메이션 (화면 확장감) */}
-                  <div className="absolute inset-0 z-0 overflow-hidden bg-black">
-                    <img src={block.src} alt="e편한세상 서울산 파크그란데 메인 뷰" className="w-full h-full object-cover opacity-90" style={{ transformOrigin: 'center top', animation: 'slowZoom 20s infinite alternate ease-in-out' }} />
+                <div key={`block-${idx}`} className="w-full relative overflow-hidden bg-[#1E2F3F] flex flex-col justify-center">
+                  {/* 사진 원본 비율 유지, 전체 노출 보장 (위/아래 여백 제거) */}
+                  <div className="w-full relative z-0 bg-black">
+                    <img src={block.src} alt="e편한세상 서울산 파크그란데 메인 뷰" className="w-full h-auto block opacity-95" style={{ transformOrigin: 'center top', animation: 'slowZoom 20s infinite alternate ease-in-out' }} />
                   </div>
 
-                  {/* 그라데이션 오버레이 (위/아래 텍스트 안정감을 위해) */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-[#1E2F3F]/30 via-transparent to-[#1a2329]/90 z-10 pointer-events-none"></div>
+                  {/* 그라데이션 오버레이 (사진 자연스럽게 겹치도록 하단만 살짝) */}
+                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#1E2F3F]/90 to-transparent z-10 pointer-events-none"></div>
 
                   {/* 마우스 스크롤 유도 애니메이션 */}
-                  <div className="absolute bottom-10 md:bottom-16 z-20 flex flex-col items-center opacity-90 animate-in fade-in duration-1000 delay-1000 fill-mode-both">
-                    <span className="text-white/80 text-[10px] md:text-xs mb-2 tracking-widest uppercase font-mono animate-pulse drop-shadow-md">Scroll Down</span>
-                    <div className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center p-1 shadow-sm">
-                      <div className="w-1.5 h-2.5 bg-white rounded-full animate-bounce mt-1"></div>
+                  <div className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center opacity-90 animate-in fade-in duration-1000 delay-1000 fill-mode-both">
+                    <span className="text-[#FB6719] text-[10px] md:text-xs mb-2 tracking-widest uppercase font-mono animate-pulse drop-shadow-md">Scroll Down</span>
+                    <div className="w-6 h-10 border-2 border-[#FB6719]/60 rounded-full flex justify-center p-1 shadow-sm">
+                      <div className="w-1.5 h-2.5 bg-[#FB6719] rounded-full animate-bounce mt-1"></div>
                     </div>
                   </div>
 
@@ -314,7 +353,7 @@ export default function Home() {
                   <style jsx>{`
                     @keyframes slowZoom {
                       0% { transform: scale(1); }
-                      100% { transform: scale(1.1); }
+                      100% { transform: scale(1.05); }
                     }
                   `}</style>
                 </div>
