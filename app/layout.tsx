@@ -13,12 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "울산 번영로 하늘채 라크뷰 공식 분양안내",
-  description: "울산 남구 최고의 입지, 하늘채 라크뷰의 분양가 및 모델하우스 정보를 확인하세요",
-  keywords: "울산번영로하늘채라크뷰, 울산 아파트 분양, 울산 하늘채, 번영로 라크뷰, 울산 남구 아파트",
+  title: "e편한세상 서울산 파크그란데 공식 분양안내",
+  description: "울산 최고의 입지, e편한세상 서울산 파크그란데의 분양가 및 모델하우스 정보를 확인하세요",
+  keywords: "e편한세상서울산파크그란데, 울산 아파트 분양, e편한세상 서울산, 서울산 파크그란데, 울산 아파트",
   openGraph: {
-    title: "울산 번영로 하늘채 라크뷰 공식 분양안내",
-    description: "울산 남구 최고의 입지, 하늘채 라크뷰의 분양가 및 모델하우스 정보를 확인하세요",
+    title: "e편한세상 서울산 파크그란데 공식 분양안내",
+    description: "울산 최고의 입지, e편한세상 서울산 파크그란데의 분양가 및 모델하우스 정보를 확인하세요",
     type: "website",
     locale: "ko_KR",
   }

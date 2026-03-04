@@ -2,52 +2,26 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, ArrowRight, X } from "lucide-react";
 
-// 전체 페이지 구성 블록 정의
 const pageBlocks = [
-  { type: 'hero', src: "/imgi_3_main_visual_new05.jpg" },
-  { type: 'image', src: "/imgi_4_development_new01.jpg" },
-  { type: 'image', src: "/imgi_7_main_visual_new04.jpg" },
+  { type: 'hero', src: "/1.png" },
+  { type: 'image', src: "/2.png" },
+  { type: 'image', src: "/3.webp" },
   { type: 'custom-banner' },
-  { type: 'image', src: "/imgi_8_00.png" },
-  { type: 'image', src: "/imgi_9_main_contactus_bg2.jpg" },
-  { type: 'image', src: "/imgi_10_스크린샷_2-10-2025_111654_.jpg" },
+  { type: 'image', src: "/4.png" },
+  { type: 'image', src: "/5.png" },
+  { type: 'image', src: "/6.png" },
   { type: 'form', id: "contact-mid" },
-  { type: 'image', src: "/imgi_12_location_new.jpg" },
-  { type: 'image', src: "/imgi_13_01.png" },
-  { type: 'image', src: "/imgi_14_02.png" },
-  { type: 'image', src: "/imgi_15_03.png" },
+  { type: 'image', src: "/7.png" },
+  { type: 'image', src: "/8.png" },
+  { type: 'image', src: "/9.png" },
   { type: 'custom-banner' },
-  { type: 'image', src: "/imgi_16_04.png" },
-  { type: 'image', src: "/imgi_17_06.png" },
-  { type: 'image', src: "/imgi_18_13.png" },
-  { type: 'image', src: "/imgi_19_08.png" },
-  { type: 'image', src: "/imgi_20_09.png" },
-  { type: 'image', src: "/imgi_21_05.png" },
-  { type: 'custom-banner' },
-  { type: 'image', src: "/imgi_22_0101.png" },
-  { type: 'image', src: "/imgi_23_010.png" },
-  { type: 'image', src: "/imgi_24_07.png" },
-  { type: 'image', src: "/imgi_25_12.png" },
-  { type: 'image', src: "/imgi_26_16.png" },
-  { type: 'image', src: "/imgi_27_17.png" },
-  { type: 'image', src: "/imgi_28_15.png" },
-  { type: 'image', src: "/imgi_29_Screenshot-2025-10-02-at-11.30.55.png" },
-  { type: 'custom-banner' },
-  { type: 'image', src: "/imgi_30_090909090.png" },
-  { type: 'image', src: "/imgi_31_layout-1.jpg" },
-  { type: 'image', src: "/imgi_32_landscaping.jpg" },
-  { type: 'image', src: "/imgi_33_1.png" },
-  { type: 'image', src: "/imgi_34_2-1.png" },
-  { type: 'image', src: "/imgi_35_3.png" },
-  { type: 'image', src: "/imgi_36_4.png" },
-  { type: 'image', src: "/imgi_37_5.png" },
-  { type: 'image', src: "/imgi_38_6.png" },
-  { type: 'image', src: "/imgi_39_7.png" },
+  { type: 'image', src: "/10.png" },
+  { type: 'image', src: "/11.webp" },
   { type: 'form', id: "contact-bottom" },
 ];
 
 const ReusableContactForm = () => (
-  <form action="https://formspree.io/f/mreavabe" method="POST" target="_blank" className="space-y-6">
+  <form action="https://formspree.io/f/mzdanvld" method="POST" target="_blank" className="space-y-6">
     <div className="space-y-6 text-left">
       <div>
         <label htmlFor="name" className="block text-sm font-bold text-gray-900 mb-2">
@@ -132,7 +106,7 @@ const ReusableContactForm = () => (
       <p className="mb-3">아파트 분양상담, 관심고객등록, 서비스 신청 등을 위해 아래와 같은 개인정보를 수집 및 이용하고 있습니다.</p>
 
       <p className="font-bold text-gray-800 mb-1">개인정보 수집 및 이용 주체</p>
-      <p className="mb-3">울산 문수로 하늘채 라크뷰(이하 '사업단지') 운영주체 010-7929-4212(이하 '운영주체')은 다음의 목적을 위하여 개인정보를 처리하고 있으며, 다음의 목적 이외의 용도로는 이용하지 않습니다.<br />운영주체는 고객님의 개인정보를 중요취급하고 개인정보 보호법 및 정보통신망 이용촉진 및 정보보호 등에 관한 법률을 준수하고 있습니다.</p>
+      <p className="mb-3">e편한세상 서울산 파크그란데(이하 '사업단지') 운영주체 010-7929-4212(이하 '운영주체')은 다음의 목적을 위하여 개인정보를 처리하고 있으며, 다음의 목적 이외의 용도로는 이용하지 않습니다.<br />운영주체는 고객님의 개인정보를 중요취급하고 개인정보 보호법 및 정보통신망 이용촉진 및 정보보호 등에 관한 법률을 준수하고 있습니다.</p>
 
       <p className="font-bold text-gray-800 mb-1">개인정보 수집 및 이용에 대한 동의</p>
       <p className="mb-1">(1) 수집하는 개인정보 항목</p>
@@ -235,7 +209,7 @@ export default function Home() {
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-4 transition-opacity">
           <div className="relative max-w-[400px] w-full bg-white shadow-2xl animate-in fade-in zoom-in duration-200">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/imgi_5_popup_20250305-scaled-1.jpg" alt="안내 팝업" className="w-full h-auto block" />
+            <img src="/1.png" alt="안내 팝업" className="w-full h-auto block" />
             <div className="bg-[#f8f9fa] border-t border-gray-200 p-3 flex justify-between items-center text-sm text-gray-600">
               <label className="flex items-center cursor-pointer hover:text-gray-900 select-none">
                 <input
@@ -261,11 +235,11 @@ export default function Home() {
           <div className="flex items-center">
             <h1 className="flex items-end font-[family-name:var(--font-geist-sans)]" style={{ marginTop: '2px' }}>
               <span className="text-[22px] md:text-[25px] font-[900] tracking-[-0.08em] text-[#3b4754] leading-none block">
-                번영로 하늘채
+                e편한세상 서울산
               </span>
               <div className="ml-1.5 border-t-[2.5px] border-l-[2.5px] border-r-[2.5px] border-[#78a2b8] px-[7px] pt-[3px] pb-0 flex items-center" style={{ transform: 'translateY(1px)' }}>
                 <span className="text-[22px] md:text-[25px] font-[900] tracking-[-0.07em] text-[#3b4754] leading-none block">
-                  라크뷰
+                  파크그란데
                 </span>
               </div>
             </h1>
@@ -299,7 +273,7 @@ export default function Home() {
                     <div className="w-12 h-1 bg-[#2C3B46] mb-8 rounded-full"></div>
 
                     <h2 className="text-3xl md:text-4xl font-light mb-4 tracking-tighter text-[#2C3B46] animate-in fade-in slide-in-from-bottom-4 duration-1000">
-                      번영로 하늘채 <span className="font-bold border border-[#2C3B46] px-2 py-1 ml-1 text-2xl md:text-3xl">라크뷰</span>
+                      e편한세상 서울산 <span className="font-bold border border-[#2C3B46] px-2 py-1 ml-1 text-2xl md:text-3xl">파크그란데</span>
                     </h2>
 
                     <div className="w-full flex justify-center mt-2">
@@ -329,7 +303,7 @@ export default function Home() {
                 <div key={`block-${idx}`} className="w-full relative overflow-hidden bg-black flex flex-col items-center justify-center min-h-[60vh] md:min-h-[80vh]">
                   {/* 배경 이미지 애니메이션 효과 (서서히 줌인) */}
                   <div className="absolute inset-0 z-0 overflow-hidden">
-                    <img src={block.src} alt="울산 번영로 하늘채 라크뷰 메인 뷰" className="w-full h-full object-cover opacity-60" style={{ transformOrigin: 'center center', animation: 'slowZoom 20s infinite alternate ease-in-out' }} />
+                    <img src={block.src} alt="e편한세상 서울산 파크그란데 메인 뷰" className="w-full h-full object-cover opacity-60" style={{ transformOrigin: 'center center', animation: 'slowZoom 20s infinite alternate ease-in-out' }} />
                   </div>
 
                   {/* 그라데이션 오버레이 (위/아래 어둡게) */}
@@ -359,7 +333,7 @@ export default function Home() {
                       <span className="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-medium tracking-widest text-white/90 mb-4">
                         PREMIUM APARTMENT
                       </span>
-                      <h3 className="text-xl md:text-2xl font-light mb-1">번영로 하늘채 <span className="font-bold">라크뷰</span></h3>
+                      <h3 className="text-xl md:text-2xl font-light mb-1">e편한세상 서울산 <span className="font-bold">파크그란데</span></h3>
                       <p className="text-lg font-medium text-white/80 mb-6 tracking-wide">로얄층 특별 분양 상담</p>
 
                       <div className="flex items-center justify-center gap-2 bg-white text-[#2C3B46] px-6 py-3 rounded-full font-bold shadow-md group-hover:bg-gray-50 transition-colors">
@@ -375,12 +349,12 @@ export default function Home() {
 
             // 일반 이미지 섹션
             // SEO 최적화를 위한 alt 태그 처리 (id 기반 분기)
-            let altText = "울산 번영로 하늘채 라크뷰 분양 상세 이미지";
-            if (idx === 0) altText = "번영로 하늘채 라크뷰 조감도";
-            if (idx === 1) altText = "울산 번영로 하늘채 라크뷰 단지설계 및 스카이라운지";
-            if (idx === 2) altText = "번영로 하늘채 라크뷰 모델하우스 및 위치 안내";
-            if (idx === 4) altText = "울산 남구 아파트 번영로 하늘채 입지 프리미엄";
-            if (idx === 8) altText = "번영로 하늘채 라크뷰 광역교통망 및 환경";
+            let altText = "e편한세상 서울산 파크그란데 분양 상세 이미지";
+            if (idx === 0) altText = "e편한세상 서울산 파크그란데 조감도";
+            if (idx === 1) altText = "e편한세상 서울산 파크그란데 단지설계 및 스카이라운지";
+            if (idx === 2) altText = "e편한세상 서울산 파크그란데 모델하우스 및 위치 안내";
+            if (idx === 4) altText = "울산 남구 아파트 e편한세상 서울산 파크그란데 입지 프리미엄";
+            if (idx === 8) altText = "e편한세상 서울산 파크그란데 광역교통망 및 환경";
 
             return (
               <div key={`block-${idx}`} className={`w-full bg-white relative block ${idx === 1 ? 'pt-6 md:pt-10' : ''}`}>
@@ -400,25 +374,21 @@ export default function Home() {
       {/* Footer 코퍼레이트 정보 */}
       <footer className="w-full bg-white border-t border-gray-200 flex flex-col items-center pb-28 md:pb-36 relative z-10">
 
-        {/* 파트너스 배너 (1번 사진 완벽 구현) */}
+        {/* 파트너스 배너 */}
         <div className="w-full bg-[#202428] flex justify-center py-3.5 md:py-5 border-b border-[#2c333a]">
           <div className="w-full max-w-6xl px-4 flex flex-row flex-wrap items-center justify-center gap-x-5 md:gap-x-10 gap-y-2">
-            <div className="flex items-center">
-              <span className="text-[#a1a1aa] mr-2 text-[12px] md:text-[14px]">시행위탁</span>
-              <span className="text-white font-[900] tracking-tight text-[15px] md:text-lg">성지디앤디</span>
-            </div>
             <div className="flex items-center">
               <span className="text-[#a1a1aa] mr-2 text-[12px] md:text-[14px]">시행</span>
               <span className="text-white font-[900] tracking-tight flex items-center text-[15px] md:text-lg">
                 <span className="text-xl md:text-2xl mr-1 leading-none inline-block text-white/90" style={{ transform: 'translateY(-1px)' }}>❁</span>
-                무궁화신탁
+                우리자산신탁(주)
               </span>
             </div>
             <div className="flex items-center">
               <span className="text-[#a1a1aa] mr-2 text-[12px] md:text-[14px]">시공</span>
               <span className="text-white font-[900] tracking-tight flex items-center text-[15px] md:text-lg font-sans">
                 <span className="text-[14px] md:text-[16px] mr-1.5 leading-none inline-block font-sans text-white/90 transform scale-125" style={{ transform: 'translateY(-1px) scale(1.1)' }}>❖</span>
-                코오롱글로벌
+                DL건설
               </span>
             </div>
           </div>
