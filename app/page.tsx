@@ -87,17 +87,21 @@ const ReusableContactForm = () => (
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-bold text-gray-900 mb-2">
-          문의사항
+        <label htmlFor="type" className="block text-sm font-bold text-gray-900 mb-2">
+          관심 평형
         </label>
-        <input
-          type="text"
-          id="message"
-          name="message"
+        <select
+          id="type"
+          name="type"
           style={{ color: '#000000', WebkitTextFillColor: '#000000' }}
-          className="w-full px-4 py-3 bg-white text-black font-extrabold rounded-md border border-gray-300 focus:ring-2 focus:ring-[#FB6719] focus:border-[#FB6719] outline-none text-base transition-shadow placeholder-gray-400"
-          placeholder="ex.회사보유분 로얄층 문의, 분양가"
-        />
+          className="w-full px-4 py-3 bg-white text-black font-extrabold rounded-md border border-gray-300 focus:ring-2 focus:ring-[#FB6719] focus:border-[#FB6719] outline-none text-base transition-shadow"
+        >
+          <option value="">관심 평형 선택</option>
+          <option value="68㎡">68㎡ (구 28평형)</option>
+          <option value="84㎡ A">84㎡ A (구 34평형)</option>
+          <option value="84㎡ B">84㎡ B (구 34평형)</option>
+          <option value="114㎡">114㎡ (구 46평형)</option>
+        </select>
       </div>
     </div>
 
@@ -149,38 +153,24 @@ const ReusableContactForm = () => (
         type="submit"
         className="w-full flex justify-center py-4 px-4 font-bold text-white bg-[#1E2F3F] hover:bg-[#FB6719] transition transform hover:-translate-y-1 shadow-md rounded-md text-lg"
       >
-        제출하기
+        🎁 관심고객 등록하고 특별 혜택받기
       </button>
     </div>
   </form>
 );
 
 const FloatingBanner = () => {
-  const scrollToForm = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <div className="fixed right-3 md:right-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3">
       {/* 퀵 메뉴 보드 */}
       <div className="bg-white/95 backdrop-blur-sm rounded-[24px] shadow-2xl border border-gray-100 p-2 flex flex-col gap-3">
-        {/* 관심고객 등록 */}
-        <button onClick={() => scrollToForm('contact-mid')} className="flex flex-col items-center justify-center gap-1 group w-14 pt-2">
-          <div className="w-10 h-10 rounded-full bg-[#FB6719]/10 text-[#FB6719] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#FB6719] group-hover:text-white transition-all">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          </div>
-          <span className="text-[10px] font-bold text-gray-700 mt-1 whitespace-nowrap">우리집 검색</span>
-        </button>
-
-        <div className="w-8 h-[1px] bg-gray-100 mx-auto"></div>
-
-        {/* 방문 예약 */}
-        <button onClick={() => scrollToForm('contact-bottom')} className="flex flex-col items-center justify-center gap-1 group w-14 pb-2">
-          <div className="w-10 h-10 rounded-full bg-[#FB6719]/10 text-[#FB6719] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#FB6719] group-hover:text-white transition-all">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        {/* 방문 예약 (전화 자동연결) */}
+        <a href="tel:010-8129-4477" className="flex flex-col items-center justify-center gap-1 group w-14 py-2">
+          <div className="w-10 h-10 rounded-full bg-[#FB6719] text-white flex items-center justify-center group-hover:scale-110 shadow-md transition-all">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
           </div>
           <span className="text-[10px] font-bold text-gray-700 mt-1 whitespace-nowrap">상담 문의</span>
-        </button>
+        </a>
       </div>
 
       {/* 애니메이션 마우스 스크롤 인디케이터 */}
@@ -336,6 +326,17 @@ export default function Home() {
                   {/* 사진 원본 비율 유지, 전체 노출 보장 (위/아래 여백 제거) */}
                   <div className="w-full relative z-0 bg-black">
                     <img src={block.src} alt="e편한세상 서울산 파크그란데 메인 뷰" className="w-full h-auto block opacity-95" style={{ transformOrigin: 'center top', animation: 'slowZoom 20s infinite alternate ease-in-out' }} />
+
+                    {/* 메인 히어로 고스트 CTA 버튼 (공식 홈페이지 스타일) */}
+                    <div className="absolute inset-0 flex items-center justify-center z-20">
+                      <button
+                        onClick={() => document.getElementById('contact-mid')?.scrollIntoView({ behavior: 'smooth' })}
+                        className="px-6 py-3 border border-white/60 bg-black/20 backdrop-blur-sm text-white text-sm md:text-base font-medium rounded-full hover:bg-white hover:text-[#1E2F3F] transition-all tracking-widest flex items-center gap-2 shadow-lg"
+                      >
+                        <span className="font-bold">관심고객 등록</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </div>
                   </div>
 
                   {/* 그라데이션 오버레이 (사진 자연스럽게 겹치도록 하단만 살짝) */}
