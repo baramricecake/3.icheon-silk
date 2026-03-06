@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import FloatingBanner from "../components/FloatingBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,12 +16,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "e편한세상 서울산 파크그란데 공식 분양안내",
-  description: "울산 최고의 입지, e편한세상 서울산 파크그란데의 분양가 및 모델하우스 정보를 확인하세요",
-  keywords: "e편한세상서울산파크그란데, 울산 아파트 분양, e편한세상 서울산, 서울산 파크그란데, 울산 아파트",
+  title: "이천 신안실크밸리 2차 공식 분양안내",
+  description: "이천 최고의 입지, 이천 신안실크밸리 2차 분양가 및 모델하우스 정보를 확인하세요",
+  keywords: "이천신안실크밸리2차, 이천 분양, 신안실크밸리, 이천 아파트 분양",
   openGraph: {
-    title: "e편한세상 서울산 파크그란데 공식 분양안내",
-    description: "울산 최고의 입지, e편한세상 서울산 파크그란데의 분양가 및 모델하우스 정보를 확인하세요",
+    title: "이천 신안실크밸리 2차 공식 분양안내",
+    description: "이천 최고의 입지, 이천 신안실크밸리 2차 분양가 및 모델하우스 정보를 확인하세요",
     type: "website",
     locale: "ko_KR",
   }
@@ -32,10 +35,15 @@ export default function RootLayout({
   return (
     <html lang="ko" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-[#e8eaed] font-[family-name:var(--font-geist-sans)] flex flex-col items-center w-full`}
         suppressHydrationWarning
       >
-        {children}
+        <Header />
+        <FloatingBanner />
+        <div className="w-full flex-grow flex flex-col items-center bg-white shadow-xl max-w-[768px]">
+          {children}
+        </div>
+        <Footer />
       </body>
     </html>
   );
