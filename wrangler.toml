@@ -1,6 +1,0 @@
-name = "3-icheon-silk"
-pages_build_output_dir = "out"
-compatibility_date = "2024-03-01"
-
-[build]
-command = "npm run build"
