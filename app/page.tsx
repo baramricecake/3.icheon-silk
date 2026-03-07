@@ -118,17 +118,17 @@ export default function Home() {
       )}
 
       {/* Hero Section */}
-      <div className="w-full relative overflow-hidden bg-[#1E2F3F] flex flex-col justify-center">
-        <div className="w-full relative z-0 bg-black">
+      <div className="w-full relative overflow-hidden bg-[#1E2F3F] flex flex-col justify-center min-h-[60vh] md:min-h-[85vh]">
+        <div className="absolute inset-0 z-0 bg-black">
           {/* Hero Background */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/1. home/hero.avif" alt="이천 신안실크밸리 2차 메인 뷰" className="w-full h-auto block opacity-95" style={{ transformOrigin: 'center top', animation: 'slowZoom 20s infinite alternate ease-in-out' }} />
+          <img src="/1. home/hero.avif" alt="이천 신안실크밸리 2차 메인 뷰" className="w-full h-full object-cover block opacity-95" style={{ transformOrigin: 'center center', animation: 'slowZoom 20s infinite alternate ease-in-out' }} />
+        </div>
 
-          {/* Hero Text Overlay (imgi_22_visual_logo.png) */}
-          <div className="absolute inset-0 flex items-center justify-center z-20 flex-col pt-10">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/1. home/imgi_22_visual_logo.png" alt="10년 공공지원 안전주거보장 10년간의 특권 이천 신안실크밸리 2차" className="w-4/5 md:w-3/5 lg:w-1/2 h-auto drop-shadow-2xl animate-in fade-in slide-in-from-bottom-5 duration-1000" />
-          </div>
+        {/* Hero Text Overlay (imgi_22_visual_logo.png) */}
+        <div className="relative z-20 flex items-center justify-center flex-col pt-10 h-full w-full pointer-events-none px-4 md:px-0 mt-8 md:mt-16">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/1. home/imgi_22_visual_logo.png" alt="10년 공공지원 안전주거보장 10년간의 특권 이천 신안실크밸리 2차" className="w-[90%] md:w-3/5 lg:w-[45%] h-auto drop-shadow-2xl animate-in fade-in slide-in-from-bottom-5 duration-1000" />
         </div>
 
         <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#1E2F3F]/90 to-transparent z-10 pointer-events-none"></div>
@@ -147,29 +147,33 @@ export default function Home() {
         <span className="tracking-[0.2em] drop-shadow-md">이천 신안실크밸리 2차 분양 중 !</span>
       </div>
 
-      {homeContentImages.map((src, idx) => (
-        <div key={idx} className="w-full bg-white relative block">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={src}
-            alt={`이천 신안실크밸리 2차 홈섹션 이미지 ${idx + 1}`}
-            className="w-full h-auto block m-0 p-0 shadow-sm border-b border-gray-100 last:border-0"
-          />
-        </div>
-      ))}
+      <div className="w-full bg-[#f8f9fa] flex flex-col items-center py-12 md:py-20 px-4 md:px-8 gap-8 md:gap-16">
+        {homeContentImages.map((src, idx) => (
+          <div key={idx} className="w-full max-w-5xl bg-white relative block rounded-2xl md:rounded-[2rem] overflow-hidden shadow-lg border border-gray-100">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={src}
+              alt={`이천 신안실크밸리 2차 홈섹션 이미지 ${idx + 1}`}
+              className="w-full h-auto block m-0 p-0"
+            />
+          </div>
+        ))}
+      </div>
 
       {/* 홈 화면 관심고객 등록 폼 영역 */}
-      <div className="w-full bg-gray-50 py-16 md:py-24 border-t border-gray-200 mt-0">
-        <div className="text-center mb-10 w-full flex flex-col items-center px-4">
-          <div className="inline-block px-3 py-1 bg-[#1E2F3F] text-white text-xs font-bold rounded-full mb-3 tracking-widest">
-            CUSTOMER SERVICE
+      <div className="w-full bg-[#f8f9fa] pb-16 md:pb-24 w-full flex justify-center px-4 md:px-8">
+        <div className="w-full max-w-5xl rounded-3xl bg-white shadow-2xl p-6 md:p-12 border border-gray-100 mt-4 md:mt-8">
+          <div className="text-center mb-8 md:mb-12 w-full flex flex-col items-center">
+            <div className="inline-block px-4 py-1.5 bg-[#B62C68] text-white text-xs md:text-sm font-bold rounded-full mb-4 tracking-widest shadow-md">
+              CUSTOMER SERVICE
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#111] tracking-tight mb-3">
+              관심고객 등록
+            </h2>
+            <p className="text-gray-500 text-sm md:text-base font-medium">등록해주시면 신속하고 친절하게 안내해 드리겠습니다.</p>
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#111] tracking-tight mb-2">
-            관심고객 등록
-          </h2>
-          <p className="text-gray-500 text-sm md:text-base">등록해주시면 신속하고 친절하게 안내해 드리겠습니다.</p>
+          <ContactForm />
         </div>
-        <ContactForm />
       </div>
     </div>
   );
