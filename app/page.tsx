@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { ArrowRight } from "lucide-react";
+import ContactForm from '../components/ContactForm';
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
@@ -22,15 +23,15 @@ export default function Home() {
     }
   };
 
-  // 1. home 디렉토리 내부의 컨텐츠 이미지 배열 (알파벳 오름차순 정렬)
+  // 1. home 디렉토리 내부의 컨텐츠 이미지 배열 (재배치)
   const homeContentImages = [
+    "/1. home/imgi_25_page0404b.jpg", // 입지환경 맵 (우선 배치)
+    "/1. home/imgi_28_page0201.jpg", // 민간임대주택 안내 (우선 배치)
     "/1. home/imgi_10_page0102.jpg",
     "/1. home/imgi_11_page0202.jpg",
     "/1. home/imgi_13_page0203.jpg",
     "/1. home/imgi_14_page0204.jpg",
-    "/1. home/imgi_25_page0404b.jpg",
     "/1. home/imgi_26_page0102.jpg",
-    "/1. home/imgi_28_page0201.jpg",
     "/1. home/imgi_29_page0203.jpg",
     "/1. home/imgi_30_page0204.jpg",
     "/1. home/imgi_31_page0301a.jpg",
@@ -156,6 +157,20 @@ export default function Home() {
           />
         </div>
       ))}
+
+      {/* 홈 화면 관심고객 등록 폼 영역 */}
+      <div className="w-full bg-gray-50 py-16 md:py-24 border-t border-gray-200 mt-0">
+        <div className="text-center mb-10 w-full flex flex-col items-center px-4">
+          <div className="inline-block px-3 py-1 bg-[#1E2F3F] text-white text-xs font-bold rounded-full mb-3 tracking-widest">
+            CUSTOMER SERVICE
+          </div>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#111] tracking-tight mb-2">
+            관심고객 등록
+          </h2>
+          <p className="text-gray-500 text-sm md:text-base">등록해주시면 신속하고 친절하게 안내해 드리겠습니다.</p>
+        </div>
+        <ContactForm />
+      </div>
     </div>
   );
 }
