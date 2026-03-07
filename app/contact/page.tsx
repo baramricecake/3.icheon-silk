@@ -1,10 +1,12 @@
 import React from 'react';
 import ContactForm from '../../components/ContactForm';
+import SubVisual from '../../components/SubVisual';
 
 export default function ContactPage() {
     return (
         <div className="w-full relative pb-20 md:pb-24 flex flex-col items-center animate-in fade-in duration-500 bg-white min-h-[70vh]">
-            <div className="py-16 md:py-24 px-6 md:px-10 w-full flex flex-col items-center mt-10">
+            <SubVisual title="문의하기" />
+            <div className="py-16 md:py-24 px-6 md:px-10 w-full flex flex-col items-center mt-6">
                 <div className="text-center mb-12 w-full flex flex-col items-center">
                     <div className="w-12 h-1 bg-[#FB6719] mb-8 rounded-full"></div>
 

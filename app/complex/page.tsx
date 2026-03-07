@@ -1,4 +1,5 @@
 import React from 'react';
+import SubVisual from '../../components/SubVisual';
 
 export default function ComplexPage() {
     const images = [
@@ -10,6 +11,7 @@ export default function ComplexPage() {
 
     return (
         <div className="w-full flex flex-col animate-in fade-in duration-500 bg-white">
+            <SubVisual title="단지안내" />
             {images.map((src, idx) => (
                 <img key={idx} src={src} alt={`이천 신안실크밸리 2차 단지안내 ${idx + 1}`} className="w-full h-auto block m-0 p-0 shadow-sm border-b border-gray-100 last:border-0" />
             ))}

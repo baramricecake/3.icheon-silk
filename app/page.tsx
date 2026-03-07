@@ -22,13 +22,21 @@ export default function Home() {
     }
   };
 
-  // 1. home 디렉토리 내부의 이미지들 배열
-  const homeImages = [
-    "/1. home/hero.avif",
-    "/1. home/hero-bedge.png",
-    "/1. home/imgi_8_page0101.jpg",
+  // 1. home 디렉토리 내부의 컨텐츠 이미지 배열 (알파벳 오름차순 정렬)
+  const homeContentImages = [
     "/1. home/imgi_10_page0102.jpg",
+    "/1. home/imgi_11_page0202.jpg",
+    "/1. home/imgi_13_page0203.jpg",
+    "/1. home/imgi_14_page0204.jpg",
+    "/1. home/imgi_25_page0404b.jpg",
     "/1. home/imgi_26_page0102.jpg",
+    "/1. home/imgi_28_page0201.jpg",
+    "/1. home/imgi_29_page0203.jpg",
+    "/1. home/imgi_30_page0204.jpg",
+    "/1. home/imgi_31_page0301a.jpg",
+    "/1. home/imgi_32_page0301b.jpg",
+    "/1. home/imgi_33_page0301c.jpg",
+    "/1. home/imgi_34_page0301d.jpg",
   ];
 
   return (
@@ -48,25 +56,61 @@ export default function Home() {
         }
       `}} />
 
-      {/* 팝업 모달 */}
+      {/* 커스텀 팝업 모달 */}
       {showPopup && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-4 transition-opacity">
-          <div className="relative max-w-[400px] w-full bg-white shadow-2xl animate-in fade-in zoom-in duration-200">
-            {/* 팝업 이미지 임시 지정 */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/1. home/hero.avif" alt="이천 신안실크밸리 2차 안내 팝업" className="w-full h-auto block" />
-            <div className="bg-[#f8f9fa] border-t border-gray-200 p-3 flex justify-between items-center text-sm text-gray-600">
-              <label className="flex items-center cursor-pointer hover:text-gray-900 select-none">
+          <div className="relative max-w-[420px] w-full bg-[#B62C68] rounded-[24px] shadow-2xl p-6 text-white text-center font-sans tracking-tight animate-in fade-in zoom-in duration-200">
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-5 flex justify-center items-center gap-2">
+              <span>이천 신안실크밸리</span>
+              <span className="bg-white text-[#B62C68] px-2 py-0.5 rounded-sm">2차</span>
+            </h2>
+
+            <div className="bg-[#fadbe4] text-[#222] rounded-xl p-5 mb-5 space-y-4">
+              <div className="border-b border-gray-300 pb-4">
+                <div className="flex items-center justify-center gap-2 font-bold text-lg mb-2">
+                  <span className="w-2 h-2 bg-black rounded-sm"></span> 1차
+                </div>
+                <p className="text-sm font-medium leading-relaxed">
+                  ※ 회사보유분 한정세대 (일반분양)<br />
+                  ※ 3억대부터~ (즉시입주가능)
+                </p>
+                <a href="#" className="inline-block mt-3 bg-[#0d3b4a] text-white text-xs font-bold py-2.5 px-5 rounded-full shadow-md hover:bg-black transition-colors">
+                  이천신안실크밸리1차 홈페이지 &gt;
+                </a>
+              </div>
+
+              <div className="pt-2">
+                <div className="flex items-center justify-center gap-2 font-bold text-lg mb-2">
+                  <span className="w-2 h-2 bg-black rounded-sm"></span> 2차
+                </div>
+                <p className="text-sm md:text-base font-bold text-[#B62C68] mb-2">
+                  공공지원민간임대 981세대
+                </p>
+                <p className="text-[13px] md:text-sm font-medium leading-relaxed">
+                  ※ 최대 10년간 안정적<br />거주가능(임대기간 자유롭게선택)<br />
+                  ※ 임대보증금 HUG 100% 보증!<br />
+                  ※ 최대 대출 90% 가능(임대보증금기준)<br />
+                  ※ 세금부담 ZERO! (취득세, 재산세, 양도세등)
+                </p>
+              </div>
+
+              <div className="pt-3 text-3xl md:text-4xl font-extrabold tracking-tighter text-black">
+                010-8129-4477
+              </div>
+            </div>
+
+            <div className="flex justify-between items-center text-sm text-white/90 px-2 mt-2">
+              <label className="flex items-center cursor-pointer hover:text-white select-none">
                 <input
                   type="checkbox"
-                  className="mr-2 w-4 h-4"
+                  className="mr-2 w-4 h-4 accent-[#ca1551]"
                   onChange={(e) => {
                     if (e.target.checked) closePopup(true);
                   }}
                 />
                 오늘 하루 보지 않기
               </label>
-              <button onClick={() => closePopup(false)} className="font-bold text-gray-800 hover:text-black">닫기</button>
+              <button onClick={() => closePopup(false)} className="font-bold text-white hover:text-gray-200">닫기</button>
             </div>
           </div>
         </div>
@@ -75,22 +119,20 @@ export default function Home() {
       {/* Hero Section */}
       <div className="w-full relative overflow-hidden bg-[#1E2F3F] flex flex-col justify-center">
         <div className="w-full relative z-0 bg-black">
-          <img src={homeImages[0]} alt="이천 신안실크밸리 2차 메인 뷰" className="w-full h-auto block opacity-95" style={{ transformOrigin: 'center top', animation: 'slowZoom 20s infinite alternate ease-in-out' }} />
+          {/* Hero Background */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/1. home/hero.avif" alt="이천 신안실크밸리 2차 메인 뷰" className="w-full h-auto block opacity-95" style={{ transformOrigin: 'center top', animation: 'slowZoom 20s infinite alternate ease-in-out' }} />
 
-          <div className="absolute inset-0 flex items-center justify-center z-20">
-            <a
-              href="/contact"
-              className="px-6 py-3 border border-white/60 bg-black/20 backdrop-blur-sm text-white text-sm md:text-base font-medium rounded-full hover:bg-white hover:text-[#1E2F3F] transition-all tracking-widest flex items-center gap-2 shadow-lg"
-            >
-              <span className="font-bold">관심고객 등록</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
+          {/* Hero Text Overlay (imgi_22_visual_logo.png) */}
+          <div className="absolute inset-0 flex items-center justify-center z-20 flex-col pt-10">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/1. home/imgi_22_visual_logo.png" alt="10년 공공지원 안전주거보장 10년간의 특권 이천 신안실크밸리 2차" className="w-4/5 md:w-3/5 lg:w-1/2 h-auto drop-shadow-2xl animate-in fade-in slide-in-from-bottom-5 duration-1000" />
           </div>
         </div>
 
         <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#1E2F3F]/90 to-transparent z-10 pointer-events-none"></div>
 
-        <div className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center opacity-90 animate-in fade-in duration-1000 delay-1000 fill-mode-both">
+        <div className="absolute bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center opacity-90 animate-in fade-in duration-1000 delay-1000 fill-mode-both">
           <span className="text-[#FB6719] text-[10px] md:text-xs mb-2 tracking-widest uppercase font-mono animate-pulse drop-shadow-md">Scroll Down</span>
           <div className="w-6 h-10 border-2 border-[#FB6719]/60 rounded-full flex justify-center p-1 shadow-sm">
             <div className="w-1.5 h-2.5 bg-[#FB6719] rounded-full animate-bounce mt-1"></div>
@@ -104,13 +146,13 @@ export default function Home() {
         <span className="tracking-[0.2em] drop-shadow-md">이천 신안실크밸리 2차 분양 중 !</span>
       </div>
 
-      {homeImages.slice(1).map((src, idx) => (
+      {homeContentImages.map((src, idx) => (
         <div key={idx} className="w-full bg-white relative block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={src}
-            alt="이천 신안실크밸리 2차 홈 이미지"
-            className="w-full h-auto block m-0 p-0 shadow-sm"
+            alt={`이천 신안실크밸리 2차 홈섹션 이미지 ${idx + 1}`}
+            className="w-full h-auto block m-0 p-0 shadow-sm border-b border-gray-100 last:border-0"
           />
         </div>
       ))}
