@@ -40,7 +40,7 @@ export default function RootLayout({
       >
         <Header />
         <FloatingBanner />
-        <div className="w-full flex-grow flex flex-col items-center bg-white shadow-xl max-w-[768px]">
+        <div className="w-full flex-grow flex flex-col items-center bg-white shadow-xl">
           {children}
         </div>
         <Footer />
