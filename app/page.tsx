@@ -118,32 +118,13 @@ export default function Home() {
       )}
 
       {/* Hero Section */}
-      <div className="w-full relative overflow-hidden bg-[#1E2F3F] flex flex-col justify-center min-h-[55vh] md:min-h-[75vh]">
-        <div className="absolute inset-0 z-0 bg-black">
-          {/* Hero Background */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/1. home/hero.avif" alt="이천 신안실크밸리 2차 메인 뷰" className="w-full h-full object-cover block opacity-95" style={{ transformOrigin: 'center center', animation: 'slowZoom 20s infinite alternate ease-in-out' }} />
-        </div>
-
-        {/* Hero Text Overlays */}
-        <div className="relative z-20 flex flex-col items-center justify-center h-full w-full pointer-events-none px-4 md:px-0 mt-8 md:mt-16 pb-12">
-          {/* 로고: 상단 배치 */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/1. home/imgi_22_visual_logo.png" alt="이천 신안실크밸리 2차 로고" className="w-[200px] md:w-[280px] h-auto drop-shadow-lg mb-4 md:mb-8 opacity-95 animate-in fade-in duration-700" />
-
-          {/* 누끼 딴 사진: 중앙 배치 */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/1. home/hero-text-trans.png" alt="10년 공공지원 안전주거보장 10년간의 특권 이천 신안실크밸리 2차" className="w-[90%] md:w-3/5 lg:w-[45%] h-auto drop-shadow-2xl animate-in fade-in slide-in-from-bottom-5 duration-1000" />
-        </div>
-
-        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#1E2F3F]/90 to-transparent z-10 pointer-events-none"></div>
-
-        <div className="absolute bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center opacity-90 animate-in fade-in duration-1000 delay-1000 fill-mode-both">
-          <span className="text-[#FB6719] text-[10px] md:text-xs mb-2 tracking-widest uppercase font-mono animate-pulse drop-shadow-md">Scroll Down</span>
-          <div className="w-6 h-10 border-2 border-[#FB6719]/60 rounded-full flex justify-center p-1 shadow-sm">
-            <div className="w-1.5 h-2.5 bg-[#FB6719] rounded-full animate-bounce mt-1"></div>
-          </div>
-        </div>
+      <div className="w-full relative overflow-hidden bg-[#1E2F3F] pt-[60px] md:pt-[80px]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/1. home/hero_landscape.png"
+          alt="이천 신안실크밸리 2차 메인 뷰"
+          className="w-full h-auto block animate-in fade-in duration-1000"
+        />
       </div>
 
       <div className="w-full relative overflow-hidden bg-gradient-to-r from-[#1E2F3F] via-[#2A435A] to-[#1E2F3F] text-white flex items-center justify-center py-3.5 text-sm md:text-base font-extrabold tracking-widest z-40 shadow-inner group cursor-pointer hover:via-[#3C5771] transition-colors duration-500">
