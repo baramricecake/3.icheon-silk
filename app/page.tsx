@@ -118,7 +118,7 @@ export default function Home() {
       )}
 
       {/* Hero Section */}
-      <div className="w-full relative overflow-hidden bg-[#1E2F3F] pt-[60px] md:pt-[80px]">
+      <div className="w-full relative overflow-hidden bg-[#1E2F3F]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/1. home/hero_landscape.png"
