@@ -118,12 +118,13 @@ export default function Home() {
       )}
 
       {/* Hero Section */}
-      <div className="w-full relative overflow-hidden bg-[#1E2F3F]">
+      <div className="w-full relative overflow-hidden bg-[#1E2F3F] group">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/1. home/hero_landscape.png"
           alt="이천 신안실크밸리 2차 메인 뷰"
-          className="w-full h-auto block animate-in fade-in duration-1000"
+          className="w-full h-auto block animate-in fade-in duration-1000 origin-center transition-transform duration-[10000ms] ease-out scale-100 group-hover:scale-110"
+          style={{ animation: 'slowPulseZoom 15s infinite alternate ease-in-out' }}
         />
       </div>
 
