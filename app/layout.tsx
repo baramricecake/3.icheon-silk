@@ -17,12 +17,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://3-icheon-silk.pages.dev"), // 현재 사용하시는 Cloudflare Pages 도메인 적용
-  title: "이천 신안실크밸리 2차 공식 분양안내",
-  description: "이천 최고의 입지, 이천 신안실크밸리 2차 분양가 및 모델하우스 정보를 확인하세요",
-  keywords: "이천신안실크밸리2차, 이천 분양, 신안실크밸리, 이천 아파트 분양",
+  title: "이천 신안실크밸리 2차 가격 및 사전점검 안내 | 로열층 방문예약",
+  description: "이천 신안실크밸리 2차 세대수, 평형별 월세 및 분양가 정보 제공. 관심고객 등록하고 로열층 선점 1:1 방문 상담 혜택을 받으세요.",
+  keywords: "이천신안실크밸리2차, 이천 분양, 신안실크밸리, 이천 아파트 분양, 가격, 사전점검, 세대수, 월세, 분양가, 방문예약",
   openGraph: {
-    title: "이천 신안실크밸리 2차 공식 분양안내",
-    description: "이천 최고의 입지, 이천 신안실크밸리 2차 분양가 및 모델하우스 정보를 확인하세요",
+    title: "이천 신안실크밸리 2차 가격 및 사전점검 안내 | 로열층 방문예약",
+    description: "이천 신안실크밸리 2차 세대수, 평형별 월세 및 분양가 정보 제공. 관심고객 등록하고 로열층 선점 1:1 방문 상담 혜택을 받으세요.",
     url: "https://3-icheon-silk.pages.dev",
     siteName: "이천 신안실크밸리 2차",
     images: [
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "이천 신안실크밸리 2차 공식 분양안내",
-    description: "이천 최고의 입지, 이천 신안실크밸리 2차 분양가 및 모델하우스 정보를 확인하세요",
+    title: "이천 신안실크밸리 2차 가격 및 사전점검 안내 | 로열층 방문예약",
+    description: "이천 신안실크밸리 2차 세대수, 평형별 월세 및 분양가 정보 제공. 관심고객 등록하고 로열층 선점 1:1 방문 상담 혜택을 받으세요.",
     images: ["/1. home/hero_landscape.png"],
   },
   verification: {
